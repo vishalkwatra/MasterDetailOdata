@@ -1,0 +1,71 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m"	xmlns:l="sap.ui.layout"	xmlns:f="sap.ui.layout.form">
+	<!--<Label text="{/suppliers/0/name}"></Label>-->
+	<!--<Table id="idTable" items="{/suppliers}">-->
+	<!--	<headerToolbar>-->
+	<!--		<Toolbar>-->
+	<!--			<content>-->
+	<!--				<ToolbarSpacer></ToolbarSpacer>-->
+	<!--				<Button icon="sap-icon://settings" press="onSettings"></Button>-->
+	<!--			</content>-->
+	<!--		</Toolbar>-->
+	<!--	</headerToolbar>-->
+	<!--	<columns>-->
+	<!--		<Column>-->
+	<!--			<Label text="Name"></Label>-->
+	<!--		</Column>-->
+	<!--		<Column>-->
+	<!--			<Label text="City"></Label>-->
+	<!--		</Column>-->
+	<!--		<Column>-->
+	<!--			<Label text="Since When"></Label>-->
+	<!--		</Column>-->
+	<!--		<Column>-->
+	<!--			<Label text="Country"></Label>-->
+	<!--		</Column>-->
+	<!--	</columns>-->
+	<!--	<items>-->
+	<!--		<ColumnListItem>-->
+	<!--			<cells>-->
+	<!--				<Text text="{name}"></Text>-->
+	<!--				<Input id="idCity" type="Text" value="{city}" showValueHelp="true" valueHelpRequest="onF4help"></Input>-->
+	<!--				<Text text="{sinceWhen}"></Text>-->
+	<!--				<Text text="{country}"></Text>-->
+	<!--			</cells>-->
+	<!--		</ColumnListItem>-->
+	<!--	</items>-->
+	<!--</Table>-->
+
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="Supplier Id" />
+				<Text id="nameText" text="{ToSupplier/BP_ID}" />
+				<Label text="Email" />
+				<Text text="{ToSupplier/EMAIL_ADDRESS}" />
+				<Label text="Fax"/>
+				<Text text="{ToSupplier/FAX_NUMBER}" />
+				<Label text="Company Name" />
+				<Text id="countryText" text="{ToSupplier/COMPANY_NAME}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>	
+	
+	
+	
+</core:FragmentDefinition>

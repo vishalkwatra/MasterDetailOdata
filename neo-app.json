@@ -1,0 +1,25 @@
+{
+
+	"routes": [{
+			"path": "/resources",
+			"target": {
+				"type": "service",
+				"name": "sapui5",
+				"entryPath": "/resources"
+			},
+			"description": "SAPUI5 Resources"
+		},
+
+		{
+			"path": "/sap/opu/odata",
+			"target": {
+				"type": "destination",
+				"name": "UYT928EOP005",
+				"entryPath": "/sap/opu/odata"
+			},
+			"description": "Connection to Gateway System"
+
+		}
+
+	]
+}

@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:cust="oil.ds.controls">
+	<form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
+		<form:content>
+			<core:Title text="More Info Data" id="title0"/>
+			<cust:customControl color="red"></cust:customControl>
+			<cust:CustomButton text="Hover over me" customButtonEvent="onCustomButtonEvent"></cust:CustomButton>
+			<Label text="Product Name" id="label0"/>
+			<Input width="100%" id="input0" value="{NAME}"/>
+			<Label text="Category" id="label1"/>
+			<Input width="100%" id="input2" value="{CATEGORY}"/>
+		</form:content>
+	</form:SimpleForm>
+</core:FragmentDefinition>

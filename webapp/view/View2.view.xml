@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="oil.ds.controller.View2"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="{i18n>supplierViewName}" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<ObjectHeader title="{PRODUCT_ID}" intro="{NAME}" number="{PRICE}" numberUnit="{CURRENCY_CODE}" icon="sap-icon://product"></ObjectHeader>
+			<IconTabBar>
+				<items>
+					<IconTabFilter key="MoreInfo" text="More Info" icon="sap-icon://bullet-text">
+						<content>
+							<core:Fragment fragmentName="oil.ds.fragments.moreInfo" type="XML"></core:Fragment>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="Supplier" text="Supplier" icon="sap-icon://supplier">
+						<content>
+							<core:Fragment fragmentName="oil.ds.fragments.supplier" type="XML"></core:Fragment>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="CitySelect" text="City Select" icon="sap-icon://map-2">
+						<content>
+							<core:Fragment fragmentName="oil.ds.fragments.citySelect" type="XML"></core:Fragment>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="idValidate" text="Validate" icon="sap-icon://validate" press="onValidate"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
