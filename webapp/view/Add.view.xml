@@ -1,0 +1,30 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+	controllerName="oil.ds.controller.Add" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleFormDisplay354" editable="false" layout="ResponsiveGridLayout" title="Create Product" labelSpanXL="3" labelSpanL="3"
+					labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+					columnsL="1" columnsM="1" singleContainerFullSize="false">
+					<f:content>
+						<Label text="Product Id"/>
+						<Input id="nameText" value="{local>/productData/PRODUCT_ID}"/>
+						<Label text="Category"/>
+						<Input value="{local>/productData/CATEGORY}"/>
+						<Label text="Tax Tarif Code"/>
+						<Input value="{local>/productData/TAX_TARIF_CODE}"/>
+						<Label text="Measure Unit"/>
+						<Input value="{local>/productData/MEASURE_UNIT}"/>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="idSave" icon="sap-icon://save" press="onSave"></Button>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -14,7 +14,7 @@
 			"path": "/sap/opu/odata",
 			"target": {
 				"type": "destination",
-				"name": "UYT928EOP005",
+				"name": "S4H",
 				"entryPath": "/sap/opu/odata"
 			},
 			"description": "Connection to Gateway System"

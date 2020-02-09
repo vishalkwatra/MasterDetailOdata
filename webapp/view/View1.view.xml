@@ -22,6 +22,9 @@
 				<contentLeft>
 					<Button id="idFilter" icon="sap-icon://filter" press="onFilter"></Button>
 				</contentLeft>
+				<contentRight>
+					<Button id="idAdd" icon="sap-icon://add" press="onAdd"></Button>
+				</contentRight>
 			</Bar>
 		</footer>
 	</Page>

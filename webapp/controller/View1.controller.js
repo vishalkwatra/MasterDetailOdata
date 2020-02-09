@@ -99,13 +99,13 @@ sap.ui.define([
 				});
 
 				this.oPopover = new sap.m.Popover("idPopover", {
-					title: "Filter fruits",
+					title: "Filter Products",
 					content: [oLabel, oComboBox],
 					afterClose: function (oCloseEvent) {
 						debugger;
 						var oCombBox = oCloseEvent.getSource().getContent()[1];
 						var sText = oCombBox.getSelectedItem().getText();
-						var oList = that.getView().byId("fruitslist");
+						var oList = that.getView().byId("productslist");
 						var binding = oList.getBinding("items");
 
 						if (sText == "<50") {
@@ -144,6 +144,10 @@ sap.ui.define([
 
 			// this.oPopover.openBy(this.getView().byId("idFilter"));
 			this.oPopover.openBy(oEvent.getSource());
+		},
+
+		onAdd: function () {
+			this.oRouter.navTo("create");
 		}
 
 		/**

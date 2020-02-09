@@ -1,6 +1,6 @@
 {
 	"_version": "1.1.0",
-		"sap.app": {
+	"sap.app": {
 		"_version": "1.3.0",
 		"id": "oil.ds.fruits",
 		"type": "application",
@@ -8,24 +8,18 @@
 		"applicationVersion": {
 			"version": "1.0.0"
 		},
-		"dataSources":{
-			"myService":{
-				"uri": "/sap/opu/odata/sap/ZVK_PRODUCT_SUPPLIER_SRV",
+		"dataSources": {
+			"myService": {
+				"uri": "/sap/opu/odata/sap/ZVK_PRODUCT_SUPPLIER2_SRV",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0"
 				}
 			}
-			
-			
-			
 		},
 		"description": "{{appDesc}}",
 		"tags": {
-			"keywords": [
-				"{{kw1}}",
-				"{{kw2}}"
-			]
+			"keywords": ["{{kw1}}", "{{kw2}}"]
 		},
 		"ach": "IS-OIL-DS",
 		"resources": "resources.json"
@@ -70,7 +64,7 @@
 			}]
 		},
 		"models": {
-			"":{
+			"": {
 				"dataSource": "myService"
 			},
 			"local": {
@@ -96,44 +90,47 @@
 				"controlId": "myApp"
 			},
 			"routes": [{
-					"pattern": "",
-					"name": "master",
-					"target": ["vishal", "kwatra"]
-				}, {
-					"pattern": "{productId}",
-					"name": "productendpoint",
-					"target": ["vishal", "rani"]
-				}
-
-			],
+				"pattern": "",
+				"name": "master",
+				"target": ["vishal", "kwatra"]
+			}, {
+				"pattern": "prd/{productId}",
+				"name": "productendpoint",
+				"target": ["vishal", "rani"]
+			}, {
+				"pattern": "addProduct",
+				"name": "create",
+				"target": ["vishal", "divansh"]
+			}],
 			"targets": {
 				"vishal": {
 					"viewName": "View1",
 					"controlAggregation": "masterPages",
-					"viewID": "idView1",
+					"viewId": "idView1",
 					"viewLevel": 1
 				},
 				"kwatra": {
 					"viewName": "Empty",
 					"controlAggregation": "detailPages",
-					"viewID": "idEmpty",
-					"viewLevel": 1
-				},
-				"manshu": {
-					"viewName": "View1",
-					"controlAggregation": "masterPages",
-					"viewID": "idView1",
+					"viewId": "idEmpty",
 					"viewLevel": 1
 				},
 				"rani": {
 					"viewName": "View2",
 					"controlAggregation": "detailPages",
-					"viewID": "idView2",
-					"viewLevel": 1
+					"viewId": "idView2",
+					"viewLevel": 2
+				},
+				"divansh": {
+					"viewName": "Add",
+					"viewType": "XML",
+					"controlAggregation": "detailPages",
+					"clearAggregation": true,
+					"viewLevel": 3,
+					"viewId": "idAdd",
+					"transition": "slide"
 				}
-
 			}
 		}
 	}
-
 }
