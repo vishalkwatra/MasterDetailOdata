@@ -19,7 +19,10 @@
 		},
 		"description": "{{appDesc}}",
 		"tags": {
-			"keywords": ["{{kw1}}", "{{kw2}}"]
+			"keywords": [
+				"{{kw1}}",
+				"{{kw2}}"
+			]
 		},
 		"ach": "IS-OIL-DS",
 		"resources": "resources.json"
@@ -58,10 +61,12 @@
 			"cozy": true
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css",
-				"id": ""
-			}]
+			"css": [
+				{
+					"uri": "css/style.css",
+					"id": ""
+				}
+			]
 		},
 		"models": {
 			"": {
@@ -89,19 +94,32 @@
 				"viewType": "XML",
 				"controlId": "myApp"
 			},
-			"routes": [{
-				"pattern": "",
-				"name": "master",
-				"target": ["vishal", "kwatra"]
-			}, {
-				"pattern": "prd/{productId}",
-				"name": "productendpoint",
-				"target": ["vishal", "rani"]
-			}, {
-				"pattern": "addProduct",
-				"name": "create",
-				"target": ["vishal", "divansh"]
-			}],
+			"routes": [
+				{
+					"pattern": "",
+					"name": "master",
+					"target": [
+						"vishal",
+						"kwatra"
+					]
+				},
+				{
+					"pattern": "prd/{productId}",
+					"name": "productendpoint",
+					"target": [
+						"vishal",
+						"rani"
+					]
+				},
+				{
+					"pattern": "addProduct",
+					"name": "create",
+					"target": [
+						"vishal",
+						"divansh"
+					]
+				}
+			],
 			"targets": {
 				"vishal": {
 					"viewName": "View1",
@@ -132,5 +150,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
