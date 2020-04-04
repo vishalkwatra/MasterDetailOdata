@@ -46,29 +46,57 @@ sap.ui.define([
 			}
 		},
 
+		// onSave: function () {
+		// 		var olocalModel = this.getView().getModel("local");
+		// 		var productPayload = olocalModel.getProperty("/productData");
+		// 		this.oDataModel.create("/ProductSet", productPayload, {
+		// 			success: function (oData) {
+		// 				MessageToast.show("Waao!! The product got created");
+		// 			},
+		// 			error: function (oError) {
+		// 				var oErrorResponse = JSON.parse(oError.responseText);
+		// 				MessageBox.error(oErrorResponse.error.message.value);
+		// 				// MessageBox.error("Could not create the product");
+		// 			}
+
+		// 		});
+		// 	}
+
 		onSave: function () {
-				var olocalModel = this.getView().getModel("local");
-				var productPayload = olocalModel.getProperty("/productData");
+			this._createproduct().then(function (odata) {
+					MessageToast.show("Waao!! The product got created");
+				}.bind(this))
+				.catch(function (oError) {
+					var oErrorResponse = JSON.parse(oError.responseText);
+					MessageBox.error(oErrorResponse.error.message.value);
+					// MessageBox.error("Could not create the product");
+				}.bind(this));
+		},
+
+		_createproduct: function () {
+			var olocalModel = this.getView().getModel("local");
+			var productPayload = olocalModel.getProperty("/productData");
+			return new Promise(function (resolve, reject) {
 				this.oDataModel.create("/ProductSet", productPayload, {
 					success: function (oData) {
-						MessageToast.show("Waao!! The product got created");
+						resolve(oData);
 					},
 					error: function (oError) {
-						var oErrorResponse = JSON.parse(oError.responseText);
-						MessageBox.error(oErrorResponse.error.message.value);
-						// MessageBox.error("Could not create the product");
+						reject(oError);
 					}
-
 				});
-			}
-			/**
-			 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
-			 * (NOT before the first rendering! onInit() is used for that one!).
-			 * @memberOf oil.ds.view.Add
-			 */
-			//	onBeforeRendering: function() {
-			//
-			//	},
+
+			}.bind(this));
+		}
+
+		/**
+		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
+		 * (NOT before the first rendering! onInit() is used for that one!).
+		 * @memberOf oil.ds.view.Add
+		 */
+		//	onBeforeRendering: function() {
+		//
+		//	},
 
 		/**
 		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
